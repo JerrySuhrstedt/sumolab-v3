@@ -24,8 +24,8 @@ export const footerNav = {
 		{ label: "Insights", href: "/insights" },
 	] satisfies NavLink[],
 	services: [
-		{ label: "Fractional Marketing Director", href: "/services" },
-		{ label: "Business Marketing Consulting", href: "/services" },
+		{ label: "Fractional Marketing Director", href: "/services/fractional-marketing-director" },
+		{ label: "Business Marketing Consulting", href: "/services/business-marketing-consulting" },
 	] satisfies NavLink[],
 };
 

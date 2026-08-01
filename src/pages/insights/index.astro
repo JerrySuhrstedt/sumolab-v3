@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Eyebrow from "../../components/Eyebrow.astro";
+import PrimaryCTA from "../../components/PrimaryCTA.astro";
+import { insights } from "../../data/insights";
+---
+
+<Layout
+	title="Insights | SumoLab"
+	description="Practical perspective on marketing leadership, strategy, and growth for established businesses. New articles coming soon."
+>
+	<main>
+		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
+			<Eyebrow>Insights</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-4xl text-brand-ink sm:text-5xl">
+				Practical perspective on marketing leadership.
+			</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
+				Notes on strategy, leadership, and growth for established businesses, written by people who do the
+				work.
+			</p>
+		</Section>
+
+		<Section tone="white">
+			{
+				insights.length > 0 ? (
+					<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+						{insights.map((article) => (
+							<a
+								href={`/insights/${article.slug}`}
+								class="flex flex-col gap-3 border border-brand-neutral-soft bg-brand-white p-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+							>
+								<h2 class="text-statement text-xl text-brand-ink">{article.title}</h2>
+								<p class="text-supporting text-brand-neutral">{article.excerpt}</p>
+							</a>
+						))}
+					</div>
+				) : (
+					<div class="max-w-xl">
+						<p class="text-supporting text-lg text-brand-neutral">
+							Insights are coming soon. In the meantime, if you'd like to talk through a specific
+							marketing challenge directly, book a strategy call.
+						</p>
+						<div class="mt-6">
+							<PrimaryCTA tone="citrus" />
+						</div>
+					</div>
+				)
+			}
+		</Section>
+	</main>
+</Layout>

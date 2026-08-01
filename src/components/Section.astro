@@ -1,0 +1,22 @@
+---
+interface Props {
+	tone?: "offwhite" | "white" | "ink" | "purple";
+	id?: string;
+	class?: string;
+}
+
+const { tone = "offwhite", id, class: className = "" } = Astro.props;
+
+const toneClasses: Record<string, string> = {
+	offwhite: "bg-brand-offwhite text-brand-ink",
+	white: "bg-brand-white text-brand-ink",
+	ink: "bg-brand-ink text-brand-offwhite",
+	purple: "bg-brand-purple text-brand-white",
+};
+---
+
+<section id={id} class={`${toneClasses[tone]} ${className}`}>
+	<div class="mx-auto max-w-(--container-content) px-6 py-20 md:px-10 md:py-28 lg:px-12">
+		<slot />
+	</div>
+</section>

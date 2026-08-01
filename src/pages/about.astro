@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import PrimaryCTA from "../components/PrimaryCTA.astro";
+import { founder } from "../data/founder";
+
+const principles = [
+	{
+		title: "Senior by default",
+		description: "You get direct access to senior judgment, not a junior account team learning on your budget.",
+	},
+	{
+		title: "Independent",
+		description:
+			"SumoLab isn't tied to a media platform, ad network, or in-house production team with incentives of its own.",
+	},
+	{
+		title: "Accountable",
+		description:
+			"We connect strategy to execution and stay accountable for whether the plan actually works, not just whether it shipped.",
+	},
+	{
+		title: "Direct",
+		description: "Candid recommendations, even when they're not the easiest thing for leadership to hear.",
+	},
+];
+---
+
+<Layout
+	title="About | SumoLab"
+	description="SumoLab provides senior, independent marketing leadership for established businesses, built around direct access to experienced judgment rather than a standard agency package."
+>
+	<main>
+		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
+			<Eyebrow>About</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-4xl text-brand-ink sm:text-5xl">
+				Senior, independent marketing leadership.
+			</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
+				SumoLab was built on a simple premise: growing companies need experienced marketing leadership long
+				before they need, or can justify, a full-time executive.
+			</p>
+		</Section>
+
+		<Section tone="white">
+			<Eyebrow>Philosophy</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">How we operate.</h2>
+			<div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
+				{
+					principles.map((principle) => (
+						<div class="border-t-2 border-brand-purple pt-5">
+							<h3 class="text-statement text-xl text-brand-ink">{principle.title}</h3>
+							<p class="text-supporting mt-3 text-brand-neutral">{principle.description}</p>
+						</div>
+					))
+				}
+			</div>
+		</Section>
+
+		<Section tone="offwhite">
+			<Eyebrow>Founder</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">Who's behind SumoLab.</h2>
+			<div class="mt-10 flex flex-col gap-8 border border-brand-neutral-soft bg-brand-white p-8 sm:flex-row md:p-10">
+				<div
+					class="flex h-32 w-32 shrink-0 items-center justify-center border border-brand-neutral-soft bg-brand-offwhite"
+					aria-hidden="true"
+				>
+					<span class="text-legal text-brand-neutral">Headshot</span>
+				</div>
+				<div>
+					<p class="text-statement text-xl text-brand-ink">
+						{founder.name ?? "Founder name coming soon"}
+					</p>
+					<p class="text-supporting mt-1 text-brand-neutral">{founder.title ?? "Founder & Principal, SumoLab"}</p>
+					<p class="text-supporting mt-4 max-w-xl text-brand-neutral">
+						{founder.bio ?? "A full bio, background, and relevant experience will appear here shortly."}
+					</p>
+					{
+						founder.linkedinUrl && (
+							<a
+								href={founder.linkedinUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-button mt-4 inline-flex items-center gap-2 text-brand-purple"
+							>
+								View LinkedIn profile
+							</a>
+						)
+					}
+				</div>
+			</div>
+		</Section>
+
+		<Section tone="purple">
+			<div class="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+				<h2 class="text-statement max-w-xl text-2xl text-brand-white sm:text-3xl">
+					Ready to talk about your marketing leadership?
+				</h2>
+				<PrimaryCTA tone="citrus" />
+			</div>
+		</Section>
+	</main>
+</Layout>

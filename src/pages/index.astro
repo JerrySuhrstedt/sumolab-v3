@@ -1,9 +1,311 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import PrimaryCTA from "../components/PrimaryCTA.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { services } from "../data/services";
+import { approachPhases } from "../data/approach";
+import { fitFor, notFitFor } from "../data/fit";
+
+const problemSymptoms = [
+	"Marketing is happening, but priorities shift month to month",
+	"Budget is being spent without a clear line to business goals",
+	"Your team, agencies, and freelancers aren't working from the same plan",
+	"Too many decisions still land on the founder's desk",
+	"Reporting tracks activity, not business impact",
+];
+
+const positioningFlow = ["Business goals", "Positioning", "Priorities", "Execution", "Measurement"];
+
+const outcomes = [
+	"Clearer marketing priorities tied to business goals",
+	"Stronger alignment between leadership and marketing",
+	"More disciplined budget allocation",
+	"Sharper positioning and messaging",
+	"Real accountability across teams and partners",
+	"More confident marketing decisions, made faster",
+];
+
+const expectations = [
+	"Direct access to senior marketing leadership, not an account team",
+	"Clear priorities within the first weeks of the engagement",
+	"A structured, recurring cadence of review and accountability",
+	"Straight answers about what's working, even when they're uncomfortable",
+];
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	name: "SumoLab",
+	description:
+		"SumoLab provides fractional marketing direction and strategic consulting for established businesses generating $5M+ in annual revenue.",
+	url: "https://sumolab.co",
+	areaServed: "US",
+};
 ---
 
-<Layout>
-	<main class="flex min-h-[60vh] items-center justify-center px-6 py-24">
-		<p class="text-supporting text-brand-neutral">Page content will be added in the next phase.</p>
+<Layout
+	title="SumoLab | Fractional Marketing Director & Marketing Consulting"
+	description="Senior marketing leadership for established businesses. SumoLab provides fractional marketing direction and strategic consulting for companies generating $5M+ in annual revenue."
+	structuredData={structuredData}
+>
+	<main>
+		<!-- Hero -->
+		<Section tone="offwhite" class="pt-14 pb-20 md:pt-20 md:pb-28">
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<span class="mb-6 block h-1 w-16 bg-brand-citrus" aria-hidden="true"></span>
+					<h1 class="text-statement text-4xl text-brand-ink sm:text-5xl lg:text-6xl">
+						Marketing leadership for your next stage of growth.
+					</h1>
+				</div>
+				<div class="flex flex-col gap-6 lg:col-span-5 lg:justify-end">
+					<p class="text-supporting text-lg text-brand-neutral">
+						SumoLab gives established businesses the senior marketing leadership they need to turn scattered
+						activity into focused, accountable growth, without the cost, delay, or risk of a full-time
+						executive hire.
+					</p>
+					<div class="flex flex-wrap items-center gap-4">
+						<PrimaryCTA tone="citrus" />
+						<a
+							href="/who-its-for"
+							class="text-button text-brand-purple underline decoration-brand-purple/40 underline-offset-4 hover:decoration-brand-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+						>
+							See If SumoLab Is a Fit
+						</a>
+					</div>
+					<p class="text-legal text-brand-neutral">Built for companies generating $5M+ in annual revenue.</p>
+				</div>
+			</div>
+		</Section>
+
+		<!-- Problem recognition -->
+		<Section tone="white">
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+				<div class="lg:col-span-5">
+					<Eyebrow>The situation</Eyebrow>
+					<h2 class="text-statement mt-4 text-3xl text-brand-ink sm:text-4xl">
+						You have marketing activity. You don't have marketing direction.
+					</h2>
+					<p class="text-supporting mt-6 text-brand-neutral">
+						Most of the businesses we talk to aren't short on effort. They're short on someone senior enough
+						to set priorities, connect the dots, and own the outcome.
+					</p>
+				</div>
+				<div class="lg:col-span-7 lg:pt-2">
+					<ul class="flex flex-col gap-5">
+						{
+							problemSymptoms.map((symptom) => (
+								<li class="flex items-start gap-4 border-b border-brand-neutral-soft pb-5 last:border-b-0">
+									<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+									<span class="text-supporting text-brand-ink">{symptom}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+		</Section>
+
+		<!-- Strategic positioning -->
+		<Section tone="ink">
+			<Eyebrow tone="citrus">Why not another agency</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-3xl text-3xl text-brand-offwhite sm:text-4xl">
+				Another campaign won't fix a missing strategy.
+			</h2>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-offwhite/80">
+				Agencies execute. Freelancers execute. What's usually missing is the senior layer that connects
+				business goals to marketing priorities, to the people executing them, to how you measure whether any
+				of it worked. That's the layer SumoLab provides.
+			</p>
+
+			<div class="mt-14">
+				<p class="text-label text-brand-citrus">Where SumoLab sits</p>
+				<div
+					class="relative mt-6 flex flex-wrap items-start justify-between gap-x-8 gap-y-8 border-t-2 border-brand-citrus/60 pt-6"
+				>
+					{
+						positioningFlow.map((label) => (
+							<div class="flex flex-col items-start gap-2">
+								<span class="h-2 w-2 rounded-full bg-brand-citrus" aria-hidden="true" />
+								<span class="text-nav-link text-brand-offwhite">{label}</span>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</Section>
+
+		<!-- Services -->
+		<Section tone="offwhite">
+			<Eyebrow>What we do</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">Two ways to work together.</h2>
+			<div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+				{services.map((service) => <ServiceCard service={service} />)}
+			</div>
+		</Section>
+
+		<!-- Outcomes -->
+		<Section tone="white">
+			<Eyebrow>What changes</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">
+				Credible outcomes, not guaranteed growth claims.
+			</h2>
+			<ul class="mt-12 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+				{
+					outcomes.map((outcome) => (
+						<li class="flex items-start gap-3">
+							<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+							<span class="text-supporting text-brand-ink">{outcome}</span>
+						</li>
+					))
+				}
+			</ul>
+		</Section>
+
+		<!-- Approach -->
+		<Section tone="offwhite">
+			<div class="flex flex-wrap items-end justify-between gap-6">
+				<div>
+					<Eyebrow>Approach</Eyebrow>
+					<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">
+						A clear process, not a black box.
+					</h2>
+				</div>
+				<a
+					href="/approach"
+					class="text-button group inline-flex items-center gap-2 text-brand-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+				>
+					<span>View Our Approach</span>
+					<span aria-hidden="true" class="inline-block transition-transform duration-150 group-hover:translate-x-0.5"
+						>&rarr;</span
+					>
+				</a>
+			</div>
+			<div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+				{
+					approachPhases.map((phase) => (
+						<div class="border-t-2 border-brand-purple pt-5">
+							<span class="text-label text-brand-neutral">{phase.number}</span>
+							<h3 class="text-statement mt-2 text-xl text-brand-ink">{phase.title}</h3>
+							<p class="text-supporting mt-3 text-brand-neutral">{phase.description}</p>
+						</div>
+					))
+				}
+			</div>
+		</Section>
+
+		<!-- Fit qualification -->
+		<Section tone="white">
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<Eyebrow>Fit</Eyebrow>
+					<h2 class="text-statement mt-4 text-3xl text-brand-ink sm:text-4xl">
+						SumoLab may be a strong fit if&hellip;
+					</h2>
+					<ul class="mt-8 flex flex-col gap-4">
+						{
+							fitFor.map((item) => (
+								<li class="flex items-start gap-3">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+									<span class="text-supporting text-brand-ink">{item}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<div class="lg:col-span-5 lg:pt-2">
+					<p class="text-label text-brand-neutral">It's probably not the right fit if</p>
+					<ul class="mt-5 flex flex-col gap-4">
+						{
+							notFitFor.map((item) => (
+								<li class="flex items-start gap-3">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-neutral" aria-hidden="true" />
+									<span class="text-supporting text-brand-neutral">{item}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+		</Section>
+
+		<!-- Proof / what to expect -->
+		<Section tone="offwhite">
+			<Eyebrow>What clients can expect</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">
+				We'd rather show this over time than claim it upfront.
+			</h2>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
+				SumoLab is early in publishing client work. Rather than invent results, here's what every engagement
+				is built to deliver.
+			</p>
+			<ul class="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+				{
+					expectations.map((item) => (
+						<li class="flex items-start gap-3">
+							<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+							<span class="text-supporting text-brand-ink">{item}</span>
+						</li>
+					))
+				}
+			</ul>
+		</Section>
+
+		<!-- About preview -->
+		<Section tone="white">
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<Eyebrow>About SumoLab</Eyebrow>
+					<h2 class="text-statement mt-4 text-3xl text-brand-ink sm:text-4xl">
+						Senior, independent marketing leadership.
+					</h2>
+					<p class="text-supporting mt-6 text-brand-neutral">
+						SumoLab was built on a simple premise: growing companies need experienced marketing leadership
+						long before they need, or can justify, a full-time executive. That means direct access to
+						senior judgment, not a junior account team, and advice built around your business, not a
+						standard package.
+					</p>
+					<a
+						href="/about"
+						class="text-button group mt-6 inline-flex items-center gap-2 text-brand-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
+					>
+						<span>Read More About SumoLab</span>
+						<span aria-hidden="true" class="inline-block transition-transform duration-150 group-hover:translate-x-0.5"
+							>&rarr;</span
+						>
+					</a>
+				</div>
+				<div class="border border-brand-neutral-soft bg-brand-offwhite p-8 lg:col-span-5">
+					<p class="text-label text-brand-neutral">Founder profile</p>
+					<p class="text-supporting mt-3 text-brand-neutral">
+						Founder bio, experience, and photo are being finalized and will appear here.
+					</p>
+				</div>
+			</div>
+		</Section>
+
+		<!-- Final CTA -->
+		<Section tone="purple">
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<h2 class="text-statement text-3xl text-brand-white sm:text-4xl">
+						If this sounds like where your business is, let's talk.
+					</h2>
+					<p class="text-supporting mt-6 max-w-xl text-brand-white/85">
+						A strategy call is a practical conversation about your business and your marketing, not a
+						sales pitch. We'll talk through what's working, what isn't, and whether SumoLab is the right
+						fit, either way.
+					</p>
+				</div>
+				<div class="flex flex-col justify-center gap-4 lg:col-span-5">
+					<PrimaryCTA tone="citrus" class="self-start" />
+					<p class="text-legal text-brand-white/70">
+						Built for founders, CEOs, presidents, and leadership teams at established businesses.
+					</p>
+				</div>
+			</div>
+		</Section>
 	</main>
 </Layout>

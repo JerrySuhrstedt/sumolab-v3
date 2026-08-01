@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import PrimaryCTA from "../components/PrimaryCTA.astro";
+import { fitFor, notFitFor } from "../data/fit";
+
+const signals = [
+	"You're spending real budget on marketing, but no one owns whether it's working",
+	"Your team, agencies, and freelancers aren't working from the same plan",
+	"Growth has stalled, or you're not confident it will hold as you scale",
+	"You're not ready to hire, or don't yet know what to hire, for a marketing executive",
+];
+---
+
+<Layout
+	title="Who It's For | SumoLab"
+	description="SumoLab works with established businesses generating $5M+ in annual revenue that need senior marketing leadership, not more isolated campaigns."
+>
+	<main>
+		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
+			<Eyebrow>Who it's for</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-4xl text-brand-ink sm:text-5xl">
+				Built for established businesses, not startups looking for cheap execution.
+			</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
+				SumoLab works best with companies that have real marketing activity already underway and need someone
+				senior to lead it. Here's how to tell if that's you.
+			</p>
+		</Section>
+
+		<Section tone="white">
+			<Eyebrow>Signals it's time</Eyebrow>
+			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">
+				If any of this sounds familiar&hellip;
+			</h2>
+			<ul class="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+				{
+					signals.map((signal) => (
+						<li class="flex items-start gap-3">
+							<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+							<span class="text-supporting text-brand-ink">{signal}</span>
+						</li>
+					))
+				}
+			</ul>
+		</Section>
+
+		<Section tone="offwhite">
+			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<Eyebrow>Strong fit</Eyebrow>
+					<h2 class="text-statement mt-4 text-3xl text-brand-ink sm:text-4xl">
+						SumoLab may be a strong fit if&hellip;
+					</h2>
+					<ul class="mt-8 flex flex-col gap-4">
+						{
+							fitFor.map((item) => (
+								<li class="flex items-start gap-3">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+									<span class="text-supporting text-brand-ink">{item}</span>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<div class="lg:col-span-5 lg:pt-2">
+					<p class="text-label text-brand-neutral">Probably not the right fit if</p>
+					<ul class="mt-5 flex flex-col gap-4">
+						{
+							notFitFor.map((item) => (
+								<li class="flex items-start gap-3">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-neutral" aria-hidden="true" />
+									<span class="text-supporting text-brand-neutral">{item}</span>
+								</li>
+							))
+						}
+					</ul>
+					<p class="text-supporting mt-6 text-brand-neutral">
+						If that's where you are today, that's a completely reasonable place to be. It's just not what
+						SumoLab is built for, and we'd rather tell you that upfront.
+					</p>
+				</div>
+			</div>
+		</Section>
+
+		<Section tone="purple">
+			<div class="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+				<h2 class="text-statement max-w-xl text-2xl text-brand-white sm:text-3xl">
+					Still not sure? A short conversation will make it clear.
+				</h2>
+				<PrimaryCTA tone="citrus" />
+			</div>
+		</Section>
+	</main>
+</Layout>

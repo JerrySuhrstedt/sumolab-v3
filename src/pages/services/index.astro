@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Eyebrow from "../../components/Eyebrow.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import PrimaryCTA from "../../components/PrimaryCTA.astro";
+import { services } from "../../data/services";
+---
+
+<Layout
+	title="Services | SumoLab"
+	description="SumoLab offers two ways to work together: a Fractional Marketing Director for ongoing leadership, and Business Marketing Consulting for a specific challenge."
+>
+	<main>
+		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
+			<Eyebrow>Services</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-4xl text-brand-ink sm:text-5xl">
+				Two ways to get senior marketing leadership.
+			</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
+				Whether you need ongoing leadership or focused input on a specific challenge, both engagements are
+				built around the same principle: senior strategy and accountability, not more disconnected activity.
+			</p>
+		</Section>
+
+		<Section tone="white">
+			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+				{services.map((service) => <ServiceCard service={service} />)}
+			</div>
+		</Section>
+
+		<Section tone="purple">
+			<div class="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+				<h2 class="text-statement max-w-xl text-2xl text-brand-white sm:text-3xl">
+					Not sure which one fits your situation?
+				</h2>
+				<PrimaryCTA tone="citrus" label="Discuss Your Growth" />
+			</div>
+		</Section>
+	</main>
+</Layout>

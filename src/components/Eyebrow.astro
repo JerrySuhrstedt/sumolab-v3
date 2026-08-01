@@ -1,0 +1,14 @@
+---
+interface Props {
+	tone?: "purple" | "citrus";
+	class?: string;
+}
+
+const { tone = "purple", class: className = "" } = Astro.props;
+const toneClass = tone === "citrus" ? "text-brand-citrus" : "text-brand-purple";
+---
+
+<p class={`text-label inline-flex items-center gap-2 ${toneClass} ${className}`}>
+	<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-current" aria-hidden="true"></span>
+	<slot />
+</p>

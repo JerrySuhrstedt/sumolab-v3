@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+---
+
+<Layout
+	title="Privacy Policy | SumoLab"
+	description="SumoLab's privacy policy, covering how information submitted through this site is collected and used."
+>
+	<main>
+		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
+			<Eyebrow>Legal</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-4xl text-brand-ink sm:text-5xl">Privacy Policy</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
+				This is a placeholder policy and has not yet been reviewed by legal counsel. Replace this page before
+				collecting any real visitor data in production.
+			</p>
+		</Section>
+
+		<Section tone="white">
+			<div class="flex max-w-3xl flex-col gap-10">
+				<div>
+					<h2 class="text-statement text-xl text-brand-ink">Information we collect</h2>
+					<p class="text-supporting mt-3 text-brand-neutral">
+						When you submit the contact form on this site, we collect the information you provide,
+						including your name, email address, company, and details about your marketing challenge.
+					</p>
+				</div>
+				<div>
+					<h2 class="text-statement text-xl text-brand-ink">How we use it</h2>
+					<p class="text-supporting mt-3 text-brand-neutral">
+						We use this information only to evaluate fit and follow up about a potential engagement. We do
+						not sell or share your information with third parties for marketing purposes.
+					</p>
+				</div>
+				<div>
+					<h2 class="text-statement text-xl text-brand-ink">Contact</h2>
+					<p class="text-supporting mt-3 text-brand-neutral">
+						Questions about this policy can be directed to SumoLab once a contact method is published on
+						this site.
+					</p>
+				</div>
+			</div>
+		</Section>
+	</main>
+</Layout>

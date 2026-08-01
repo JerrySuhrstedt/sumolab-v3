@@ -1,0 +1,28 @@
+---
+import type { ServiceFaq } from "../data/services";
+
+interface Props {
+	items: ServiceFaq[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="divide-y divide-brand-neutral-soft border-t border-b border-brand-neutral-soft">
+	{
+		items.map((item, index) => (
+			<details class="group py-6" open={index === 0}>
+				<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-brand-ink [&::-webkit-details-marker]:hidden">
+					<span class="text-supporting font-semibold">{item.question}</span>
+					<span
+						aria-hidden="true"
+						class="shrink-0 text-xl text-brand-purple transition-transform duration-200 group-open:rotate-45"
+					>
+						+
+					</span>
+				</summary>
+				<p class="text-supporting mt-4 text-brand-neutral">{item.answer}</p>
+			</details>
+		))
+	}
+</div>

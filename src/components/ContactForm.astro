@@ -1,0 +1,300 @@
+---
+import { integrations } from "../data/integrations";
+import { contact } from "../data/contact";
+---
+
+<div id="form-status" role="status" aria-live="polite" class="form-status hidden mb-6"></div>
+
+<form id="contact-form" novalidate class="flex flex-col gap-6">
+	<div class="grid gap-6 sm:grid-cols-2">
+		<div class="flex flex-col gap-2">
+			<label for="name" class="text-label text-brand-ink">Name</label>
+			<input id="name" name="name" type="text" autocomplete="name" required class="field-input" />
+			<p id="name-error" class="field-error hidden" role="alert"></p>
+		</div>
+
+		<div class="flex flex-col gap-2">
+			<label for="email" class="text-label text-brand-ink">Work email</label>
+			<input id="email" name="email" type="email" autocomplete="email" required class="field-input" />
+			<p id="email-error" class="field-error hidden" role="alert"></p>
+		</div>
+
+		<div class="flex flex-col gap-2">
+			<label for="company" class="text-label text-brand-ink">Company</label>
+			<input id="company" name="company" type="text" autocomplete="organization" required class="field-input" />
+			<p id="company-error" class="field-error hidden" role="alert"></p>
+		</div>
+
+		<div class="flex flex-col gap-2">
+			<label for="website" class="text-label text-brand-ink">Company website</label>
+			<input
+				id="website"
+				name="website"
+				type="url"
+				autocomplete="url"
+				placeholder="https://"
+				class="field-input"
+			/>
+			<p id="website-error" class="field-error hidden" role="alert"></p>
+		</div>
+
+		<div class="flex flex-col gap-2">
+			<label for="revenue" class="text-label text-brand-ink">Approximate annual revenue</label>
+			<select id="revenue" name="revenue" required class="field-input">
+				<option value="" selected disabled>Select a range</option>
+				<option value="5-10m">$5M – $10M</option>
+				<option value="10-25m">$10M – $25M</option>
+				<option value="25-50m">$25M – $50M</option>
+				<option value="50m-plus">$50M+</option>
+			</select>
+			<p id="revenue-error" class="field-error hidden" role="alert"></p>
+		</div>
+
+		<div class="flex flex-col gap-2">
+			<label for="challenge" class="text-label text-brand-ink">Primary marketing challenge</label>
+			<select id="challenge" name="challenge" required class="field-input">
+				<option value="" selected disabled>Select the closest fit</option>
+				<option value="no-strategy">No clear marketing strategy</option>
+				<option value="leadership">Marketing team needs stronger leadership</option>
+				<option value="scaling">Scaling without wasting budget</option>
+				<option value="positioning">Positioning or messaging isn't working</option>
+				<option value="reporting">Reporting doesn't reflect business impact</option>
+				<option value="other">Other</option>
+			</select>
+			<p id="challenge-error" class="field-error hidden" role="alert"></p>
+		</div>
+	</div>
+
+	<div class="flex flex-col gap-2">
+		<label for="message" class="text-label text-brand-ink">Anything else we should know? (optional)</label>
+		<textarea id="message" name="message" rows="4" class="field-input"></textarea>
+	</div>
+
+	<p class="text-legal text-brand-neutral">
+		We use this information only to evaluate fit and follow up about a strategy call. We won't share it with third
+		parties.
+	</p>
+
+	<button type="submit" id="contact-submit" class="contact-submit text-button">
+		<span>Book a Strategy Call</span>
+	</button>
+</form>
+
+<style>
+	.field-input {
+		width: 100%;
+		border: 1px solid var(--color-brand-neutral-soft);
+		border-radius: 0.125rem;
+		background-color: var(--color-brand-white);
+		color: var(--color-brand-ink);
+		padding: 0.65rem 0.85rem;
+		font-family: var(--font-sans);
+		font-size: 0.9375rem;
+		transition: border-color 0.15s ease;
+	}
+
+	.field-input:focus-visible {
+		outline: 2px solid var(--color-brand-purple);
+		outline-offset: 1px;
+		border-color: var(--color-brand-purple);
+	}
+
+	.field-input[aria-invalid="true"] {
+		border-color: #b3261e;
+	}
+
+	.field-error {
+		font-family: var(--font-sans);
+		font-size: 0.8125rem;
+		color: #b3261e;
+	}
+
+	.contact-submit {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		align-self: flex-start;
+		white-space: nowrap;
+		border-radius: 0.125rem;
+		padding: 0.85rem 1.75rem;
+		background-color: var(--color-brand-citrus);
+		color: var(--color-brand-ink);
+		transition: background-color 0.15s ease;
+	}
+
+	.contact-submit:hover:not(:disabled) {
+		background-color: var(--color-brand-ink);
+		color: var(--color-brand-citrus);
+	}
+
+	.contact-submit:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	.contact-submit:focus-visible {
+		outline: 2px solid var(--color-brand-purple);
+		outline-offset: 2px;
+	}
+
+	.form-status {
+		border-radius: 0.125rem;
+		padding: 1rem 1.25rem;
+		font-family: var(--font-sans);
+		font-size: 0.9375rem;
+	}
+
+	.form-status.status-pending {
+		background-color: var(--color-brand-offwhite);
+		border: 1px solid var(--color-brand-neutral-soft);
+		color: var(--color-brand-ink);
+	}
+
+	.form-status.status-success {
+		background-color: var(--color-brand-citrus);
+		color: var(--color-brand-ink);
+	}
+
+	.form-status.status-error {
+		background-color: #fbeceb;
+		border: 1px solid #b3261e;
+		color: #7a1a14;
+	}
+</style>
+
+<script is:inline define:vars={{ formEndpoint: integrations.formEndpoint, contactEmail: contact.email }}>
+	function initContactForm() {
+		const form = document.getElementById("contact-form");
+		if (!(form instanceof HTMLFormElement)) return;
+		const statusEl = document.getElementById("form-status");
+		const submitBtn = document.getElementById("contact-submit");
+
+		function setError(field, message) {
+			const errorEl = document.getElementById(`${field}-error`);
+			const inputEl = document.getElementById(field);
+			if (!errorEl || !inputEl) return;
+			if (message) {
+				errorEl.textContent = message;
+				errorEl.classList.remove("hidden");
+				inputEl.setAttribute("aria-invalid", "true");
+				inputEl.setAttribute("aria-describedby", `${field}-error`);
+			} else {
+				errorEl.textContent = "";
+				errorEl.classList.add("hidden");
+				inputEl.removeAttribute("aria-invalid");
+			}
+		}
+
+		function validate() {
+			let valid = true;
+			const data = new FormData(form);
+
+			const name = String(data.get("name") || "").trim();
+			if (!name) {
+				setError("name", "Enter your name.");
+				valid = false;
+			} else setError("name", "");
+
+			const email = String(data.get("email") || "").trim();
+			const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!email) {
+				setError("email", "Enter your work email.");
+				valid = false;
+			} else if (!emailPattern.test(email)) {
+				setError("email", "Enter a valid email address.");
+				valid = false;
+			} else setError("email", "");
+
+			const company = String(data.get("company") || "").trim();
+			if (!company) {
+				setError("company", "Enter your company name.");
+				valid = false;
+			} else setError("company", "");
+
+			const website = String(data.get("website") || "").trim();
+			if (website) {
+				try {
+					new URL(website);
+					setError("website", "");
+				} catch {
+					setError("website", "Enter a full URL, including https://.");
+					valid = false;
+				}
+			} else setError("website", "");
+
+			const revenue = String(data.get("revenue") || "");
+			if (!revenue) {
+				setError("revenue", "Select a revenue range.");
+				valid = false;
+			} else setError("revenue", "");
+
+			const challenge = String(data.get("challenge") || "");
+			if (!challenge) {
+				setError("challenge", "Select the closest fit.");
+				valid = false;
+			} else setError("challenge", "");
+
+			return valid;
+		}
+
+		function showStatus(kind, message) {
+			if (!statusEl) return;
+			statusEl.classList.remove("hidden", "status-success", "status-error", "status-pending");
+			statusEl.classList.add(`status-${kind}`);
+			statusEl.textContent = message;
+		}
+
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			if (!validate()) {
+				const firstInvalid = form.querySelector('[aria-invalid="true"]');
+				if (firstInvalid instanceof HTMLElement) firstInvalid.focus();
+				return;
+			}
+
+			if (!formEndpoint) {
+				form.hidden = true;
+				showStatus(
+					"pending",
+					"Thanks — we've got your details. Our scheduling system isn't connected yet, so this submission wasn't sent anywhere." +
+						(contactEmail
+							? ` In the meantime, reach us directly at ${contactEmail}.`
+							: " Check back soon for a direct contact method."),
+				);
+				return;
+			}
+
+			let originalLabel = "";
+			if (submitBtn instanceof HTMLButtonElement) {
+				submitBtn.disabled = true;
+				originalLabel = submitBtn.textContent || "";
+				submitBtn.textContent = "Submitting…";
+			}
+			showStatus("pending", "Submitting your request…");
+
+			try {
+				const res = await fetch(formEndpoint, {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(Object.fromEntries(new FormData(form))),
+				});
+				if (!res.ok) throw new Error("Request failed");
+				form.hidden = true;
+				showStatus("success", "Thanks — we've received your request and will follow up shortly.");
+			} catch {
+				showStatus(
+					"error",
+					"Something went wrong sending your request. Please try again, or reach out directly.",
+				);
+				if (submitBtn instanceof HTMLButtonElement) {
+					submitBtn.disabled = false;
+					submitBtn.textContent = originalLabel || "Book a Strategy Call";
+				}
+			}
+		});
+	}
+
+	initContactForm();
+	document.addEventListener("astro:page-load", initContactForm);
+</script>
