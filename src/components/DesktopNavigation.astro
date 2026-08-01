@@ -1,0 +1,24 @@
+---
+import { primaryNav } from "../data/navigation";
+---
+
+<nav aria-label="Primary" class="hidden lg:block">
+	<ul class="flex items-center gap-7 xl:gap-9">
+		{
+			primaryNav.map((item) => (
+				<li>
+					<a
+						href={item.href}
+						class="text-nav-link group relative inline-block whitespace-nowrap py-2 text-brand-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-purple"
+					>
+						{item.label}
+						<span
+							aria-hidden="true"
+							class="absolute inset-x-0 -bottom-0.5 h-px scale-x-0 bg-brand-purple transition-transform duration-200 ease-out group-hover:scale-x-100"
+						/>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>

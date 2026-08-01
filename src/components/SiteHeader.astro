@@ -1,0 +1,45 @@
+---
+import BrandLogo from "./BrandLogo.astro";
+import DesktopNavigation from "./DesktopNavigation.astro";
+import MobileMenuToggle from "./MobileMenuToggle.astro";
+import PrimaryCTA from "./PrimaryCTA.astro";
+---
+
+<header id="site-header" class="sticky top-0 z-50 bg-brand-offwhite transition-shadow duration-200">
+	<div
+		class="mx-auto flex max-w-(--container-content) items-center justify-between gap-4 px-6 py-4 md:px-10 lg:px-12"
+	>
+		<BrandLogo height={30} />
+		<DesktopNavigation />
+		<div class="flex items-center gap-4">
+			<div class="hidden lg:block">
+				<PrimaryCTA tone="citrus" />
+			</div>
+			<MobileMenuToggle />
+		</div>
+	</div>
+</header>
+
+<style>
+	#site-header.is-scrolled {
+		box-shadow: 0 1px 0 0 var(--color-brand-neutral-soft);
+		background-color: var(--color-brand-white);
+	}
+</style>
+
+<script>
+	function initHeaderScrollState() {
+		const header = document.getElementById("site-header");
+		if (!header) return;
+
+		const updateState = () => {
+			header.classList.toggle("is-scrolled", window.scrollY > 8);
+		};
+
+		updateState();
+		window.addEventListener("scroll", updateState, { passive: true });
+	}
+
+	initHeaderScrollState();
+	document.addEventListener("astro:page-load", initHeaderScrollState);
+</script>
