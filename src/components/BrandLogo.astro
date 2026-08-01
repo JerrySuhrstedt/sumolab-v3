@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import logoSrc from "../assets/sumolab-logo.png";
-
 interface Props {
 	class?: string;
 	/** "default" sits directly on the surface; "plate" places the logo on a light card, for use on dark backgrounds. */
@@ -20,11 +17,11 @@ const width = Math.round(height * (300 / 44));
 			aria-label="SumoLab home"
 			class={`inline-flex items-center rounded-md bg-brand-offwhite px-4 py-2.5 ${className}`}
 		>
-			<Image src={logoSrc} alt="SumoLab" height={height} width={width} class="h-auto w-auto" />
+			<img src="/sumolab-logo.png" alt="SumoLab" height={height} width={width} class="h-auto w-auto" />
 		</a>
 	) : (
 		<a href="/" aria-label="SumoLab home" class={`inline-flex items-center ${className}`}>
-			<Image src={logoSrc} alt="SumoLab" height={height} width={width} class="h-auto w-auto" />
+			<img src="/sumolab-logo.png" alt="SumoLab" height={height} width={width} class="h-auto w-auto" />
 		</a>
 	)
 }
