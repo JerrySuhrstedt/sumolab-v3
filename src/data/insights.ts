@@ -1,6 +1,7 @@
 export interface InsightArticle {
 	slug: string;
 	title: string;
+	imageSrc: string;
 	category: string;
 	publishedAt: string;
 	excerpt: string;
@@ -11,6 +12,7 @@ export interface InsightArticle {
 export const insights: InsightArticle[] = [
 	{
 		slug: "creating-a-seamless-brand-experience-consistency",
+		imageSrc: "/insights/creating-a-seamless-brand-experience-consistency.jpg",
 		title: "Creating a Seamless Brand Experience: Consistency Across Social Media Channels",
 		category: "Branding",
 		publishedAt: "2024-10-15",
@@ -26,6 +28,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "digital-marketing-strategies-tips-best-practices",
+		imageSrc: "/insights/digital-marketing-strategies-tips-best-practices.jpg",
 		title: "Digital Marketing: Strategies, Tips, Best Practices",
 		category: "Digital Marketing",
 		publishedAt: "2024-06-17",
@@ -44,6 +47,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "high-quality-website-design-elevate-your-online-presence",
+		imageSrc: "/insights/high-quality-website-design-elevate-your-online-presence.jpg",
 		title: "High-Quality Website Design: Elevate Your Online Presence",
 		category: "Website Design",
 		publishedAt: "2024-06-17",
@@ -63,6 +67,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "10-crazy-benefits-of-podcasting-for-your-business",
+		imageSrc: "/insights/10-crazy-benefits-of-podcasting-for-your-business.jpg",
 		title: "10 Benefits of Podcasting for Your Business",
 		category: "Podcasting",
 		publishedAt: "2024-06-07",
@@ -83,6 +88,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "smart-web-design-for-contractors-in-chandler-arizona",
+		imageSrc: "/insights/smart-web-design-for-contractors-in-chandler-arizona.jpg",
 		title: "Smart Web Design for Contractors in Chandler, Arizona",
 		category: "Website Design",
 		publishedAt: "2024-06-08",
@@ -97,6 +103,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "why-branding-is-important-the-judy-trudy-success-story",
+		imageSrc: "/insights/why-branding-is-important-the-judy-trudy-success-story.jpg",
 		title: "Why Branding Is Important: The Judy & Trudy Success Story",
 		category: "Branding",
 		publishedAt: "2024-06-11",
@@ -110,6 +117,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "seo-tools-for-website-traffic-discover-secrets",
+		imageSrc: "/insights/seo-tools-for-website-traffic-discover-secrets.jpg",
 		title: "SEO Tools for Website Traffic: What They Get Wrong",
 		category: "SEO",
 		publishedAt: "2024-06-15",
@@ -123,6 +131,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "what-digital-marketing-is-what-it-is-not",
+		imageSrc: "/insights/what-digital-marketing-is-what-it-is-not.jpg",
 		title: "What Digital Marketing Is, and What It Is Not",
 		category: "Digital Marketing",
 		publishedAt: "2024-06-25",
@@ -144,6 +153,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "business-turnaround-strategy-bankrupt-to-12m",
+		imageSrc: "/insights/business-turnaround-strategy-bankrupt-to-12m.jpg",
 		title: "My Business Turnaround Strategy: From Bankruptcy to a Multi-Million Dollar Company",
 		category: "Business Management",
 		publishedAt: "2024-08-20",
@@ -157,6 +167,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "how-a-home-builder-implemented-salesforce-and-boosted-sales",
+		imageSrc: "/insights/how-a-home-builder-implemented-salesforce-and-boosted-sales.jpg",
 		title: "How a Home Builder Implemented Salesforce and Boosted Sales",
 		category: "Case Studies",
 		publishedAt: "2024-03-24",
@@ -171,6 +182,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "do-i-need-a-business-analyst",
+		imageSrc: "/insights/do-i-need-a-business-analyst.jpg",
 		title: "Do I Need a Business Analyst?",
 		category: "Business Analysis",
 		publishedAt: "2024-03-24",
@@ -184,6 +196,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "5-powerful-reasons-you-need-marketing-automation",
+		imageSrc: "/insights/5-powerful-reasons-you-need-marketing-automation.jpg",
 		title: "5 Powerful Reasons You Need Marketing Automation",
 		category: "Marketing Automation",
 		publishedAt: "2024-03-24",
@@ -203,6 +216,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "sales-process-6-powerful-reasons-you-need-one",
+		imageSrc: "/insights/sales-process-6-powerful-reasons-you-need-one.jpg",
 		title: "Sales Process: 6 Powerful Reasons You Need One",
 		category: "Sales",
 		publishedAt: "2024-03-24",
@@ -221,6 +235,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "what-business-analysts-do",
+		imageSrc: "/insights/what-business-analysts-do.jpg",
 		title: "What Business Analysts Actually Do",
 		category: "Business Analysis",
 		publishedAt: "2024-03-24",
@@ -233,6 +248,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "slack-5-reasons-its-better-for-internal-communication",
+		imageSrc: "/insights/slack-5-reasons-its-better-for-internal-communication.jpg",
 		title: "Slack: 5 Reasons It's Better for Internal Communication",
 		category: "Business Tools",
 		publishedAt: "2024-03-24",
@@ -245,6 +261,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "start-your-salesforce-career",
+		imageSrc: "/insights/start-your-salesforce-career.jpg",
 		title: "How to Start Your Salesforce Career",
 		category: "Salesforce",
 		publishedAt: "2024-03-24",
@@ -258,6 +275,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "why-your-business-may-need-salesforce",
+		imageSrc: "/insights/why-your-business-may-need-salesforce.jpg",
 		title: "Why Your Business May Need Salesforce",
 		category: "Salesforce",
 		publishedAt: "2024-03-24",
@@ -270,6 +288,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "5-reasons-your-business-needs-a-crm",
+		imageSrc: "/insights/5-reasons-your-business-needs-a-crm.jpg",
 		title: "5 Reasons Your Business Needs a CRM",
 		category: "CRM",
 		publishedAt: "2024-03-24",
@@ -282,6 +301,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "do-i-need-a-salesforce-consultant",
+		imageSrc: "/insights/do-i-need-a-salesforce-consultant.jpg",
 		title: "Do I Need a Salesforce Consultant?",
 		category: "Salesforce",
 		publishedAt: "2024-03-24",
@@ -294,6 +314,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "i-bought-salesforce-now-what",
+		imageSrc: "/insights/i-bought-salesforce-now-what.jpg",
 		title: "I Bought Salesforce, Now What?",
 		category: "Salesforce",
 		publishedAt: "2024-03-24",
@@ -306,6 +327,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "what-really-is-a-crm",
+		imageSrc: "/insights/what-really-is-a-crm.jpg",
 		title: "What Really Is a CRM?",
 		category: "CRM",
 		publishedAt: "2024-03-24",
@@ -318,6 +340,7 @@ export const insights: InsightArticle[] = [
 	},
 	{
 		slug: "why-salesforce-is-the-1-crm",
+		imageSrc: "/insights/why-salesforce-is-the-1-crm.jpg",
 		title: "Why Salesforce Is the #1 CRM",
 		category: "Salesforce",
 		publishedAt: "2024-03-24",

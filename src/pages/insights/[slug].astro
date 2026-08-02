@@ -24,13 +24,19 @@ const publishedDate = new Date(insight.publishedAt).toLocaleDateString("en-US", 
 
 <Layout title={`${insight.title} | SumoLab Insights`} description={insight.excerpt}>
 	<main>
-		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
-			<Eyebrow>
-				{insight.category} &middot; {publishedDate}
-			</Eyebrow>
-			<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-ink">{insight.title}</h1>
-			<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-neutral">{insight.excerpt}</p>
-		</Section>
+		<section class="relative isolate overflow-hidden">
+			<img src={insight.imageSrc} alt="" class="absolute inset-0 h-full w-full object-cover" />
+			<div class="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/75 to-brand-ink/40" aria-hidden="true"></div>
+			<div
+				class="relative mx-auto flex min-h-[55vh] max-w-(--container-content) flex-col justify-end px-6 pt-24 pb-16 md:px-10 md:pb-20 lg:px-12"
+			>
+				<Eyebrow tone="citrus">
+					{insight.category} &middot; {publishedDate}
+				</Eyebrow>
+				<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-offwhite">{insight.title}</h1>
+				<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-offwhite/85">{insight.excerpt}</p>
+			</div>
+		</section>
 
 		<Section tone="white">
 			<div class="mx-auto flex max-w-3xl flex-col gap-6">
