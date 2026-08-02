@@ -1,13 +1,8 @@
-/**
- * Founder details have not been provided yet. Fill these in for the
- * About page — components render a clearly-labeled placeholder when a
- * field is null rather than inventing a bio or credentials.
- */
 export const founder = {
-	name: null as string | null,
-	title: null as string | null,
-	bio: null as string | null,
-	headshotSrc: null as string | null,
-	experience: [] as string[],
+	name: "Jerry Suhrstedt" as string | null,
+	title: "Founder & Fractional CMO, SumoLab" as string | null,
+	bio: "26 years of experience as an entrepreneur, marketing leader, and business consultant, helping established businesses develop and execute high-impact marketing strategies without the commitment of a full-time hire." as string | null,
+	headshotSrc: "/team/jerry-suhrstedt.png" as string | null,
+	experience: ["26 years in business, marketing, and entrepreneurship"] as string[],
 	linkedinUrl: null as string | null,
 };

@@ -77,6 +77,27 @@ const year = new Date().getFullYear();
 						</li>
 						<li>
 							{
+								contact.phone ? (
+									<a
+										href={`tel:${contact.phoneHref}`}
+										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-citrus"
+									>
+										{contact.phone}
+									</a>
+								) : (
+									<span class="text-footer-link text-brand-offwhite/50">Phone</span>
+								)
+							}
+						</li>
+						<li>
+							{
+								contact.location ? (
+									<span class="text-footer-link text-brand-offwhite/90">{contact.location}</span>
+								) : null
+							}
+						</li>
+						<li>
+							{
 								contact.linkedinUrl ? (
 									<a
 										href={contact.linkedinUrl}
@@ -99,7 +120,7 @@ const year = new Date().getFullYear();
 		<div
 			class="mt-14 flex flex-col-reverse items-start gap-4 border-t border-brand-citrus/25 pt-8 sm:flex-row sm:items-center sm:justify-between"
 		>
-			<p class="text-legal text-brand-offwhite/60">&copy; {year} SumoLab. All rights reserved.</p>
+			<p class="text-legal text-brand-offwhite/60">&copy; {year} SumoLab LLC. All rights reserved.</p>
 			<ul class="flex items-center gap-6">
 				{
 					legalNav.map((item) => (

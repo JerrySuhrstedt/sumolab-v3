@@ -1,9 +1,10 @@
-/**
- * Real contact details have not been provided yet. Fill these in once
- * available — components render a non-linking placeholder label when a
- * field is null rather than pointing to an invented address.
- */
 export const contact = {
-	email: null as string | null,
+	email: "jerry@sumolab.co" as string | null,
+	phone: "(480) 826-9400" as string | null,
+	phoneHref: "+14808269400" as string | null,
+	location: "Chandler, Arizona" as string | null,
+	/** No real social URLs exist yet — icons on the old site are unlinked placeholders. */
 	linkedinUrl: null as string | null,
+	facebookUrl: null as string | null,
+	youtubeUrl: null as string | null,
 };
