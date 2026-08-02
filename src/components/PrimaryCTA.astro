@@ -5,6 +5,8 @@ interface Props {
 	class?: string;
 	/** "citrus" is the default high-contrast treatment; "purple" for contexts already on a light/citrus surface. */
 	tone?: "citrus" | "purple";
+	/** Focus-ring color: "purple" reads on light (offwhite/white) surfaces; "citrus" reads on dark ones (ink/purple). */
+	ring?: "purple" | "citrus";
 	label?: string;
 	href?: string;
 }
@@ -12,6 +14,7 @@ interface Props {
 const {
 	class: className = "",
 	tone = "citrus",
+	ring = "purple",
 	label = primaryCta.label,
 	href = primaryCta.href,
 } = Astro.props;
@@ -20,11 +23,13 @@ const toneClasses =
 	tone === "citrus"
 		? "bg-brand-citrus text-brand-ink hover:bg-brand-ink hover:text-brand-citrus"
 		: "bg-brand-purple text-brand-white hover:bg-brand-purple-dark";
+
+const ringClass = ring === "citrus" ? "focus-visible:outline-brand-citrus" : "focus-visible:outline-brand-purple";
 ---
 
 <a
 	href={href}
-	class={`text-button group inline-flex items-center gap-2 whitespace-nowrap rounded-sm px-5 py-3 transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple ${toneClasses} ${className}`}
+	class={`text-button group inline-flex items-center gap-2 whitespace-nowrap rounded-sm px-5 py-3 transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${ringClass} ${toneClasses} ${className}`}
 >
 	<span>{label}</span>
 	<span aria-hidden="true" class="inline-block transition-transform duration-150 group-hover:translate-x-0.5">

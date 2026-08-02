@@ -11,7 +11,7 @@ const year = new Date().getFullYear();
 	<div class="mx-auto max-w-(--container-content) px-6 py-16 md:px-10 md:py-20 lg:px-12">
 		<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
 			<div class="lg:col-span-5">
-				<BrandLogo variant="plate" height={26} />
+				<BrandLogo variant="white" height={26} />
 				<p class="text-statement mt-6 max-w-sm text-2xl text-brand-offwhite sm:text-3xl">
 					Senior marketing leadership for established businesses ready to turn scattered activity into
 					focused growth.
@@ -27,7 +27,7 @@ const year = new Date().getFullYear();
 								<li>
 									<a
 										href={item.href}
-										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus"
+										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-citrus"
 									>
 										{item.label}
 									</a>
@@ -45,7 +45,7 @@ const year = new Date().getFullYear();
 								<li>
 									<a
 										href={item.href}
-										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus"
+										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-citrus"
 									>
 										{item.label}
 									</a>
@@ -59,14 +59,14 @@ const year = new Date().getFullYear();
 					<h2 class="text-footer-heading text-brand-neutral-soft">Connect</h2>
 					<ul class="mt-4 flex flex-col items-start gap-4">
 						<li>
-							<PrimaryCTA tone="citrus" />
+							<PrimaryCTA tone="citrus" ring="citrus" />
 						</li>
 						<li>
 							{
 								contact.email ? (
 									<a
 										href={`mailto:${contact.email}`}
-										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus"
+										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-citrus"
 									>
 										{contact.email}
 									</a>
@@ -80,7 +80,7 @@ const year = new Date().getFullYear();
 								contact.linkedinUrl ? (
 									<a
 										href={contact.linkedinUrl}
-										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus"
+										class="text-footer-link text-brand-offwhite/90 transition-colors duration-150 hover:text-brand-citrus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-citrus"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
@@ -106,7 +106,7 @@ const year = new Date().getFullYear();
 						<li>
 							<a
 								href={item.href}
-								class="text-legal text-brand-offwhite/60 transition-colors duration-150 hover:text-brand-citrus"
+								class="text-legal text-brand-offwhite/60 transition-colors duration-150 hover:text-brand-citrus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-citrus"
 							>
 								{item.label}
 							</a>

@@ -9,7 +9,10 @@ import PrimaryCTA from "./PrimaryCTA.astro";
 			{
 				primaryNav.map((item) => (
 					<li>
-						<a href={item.href} class="text-statement block py-3 text-4xl text-brand-offwhite sm:text-5xl">
+						<a
+							href={item.href}
+							class="text-statement block py-3 text-4xl text-brand-offwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-citrus sm:text-5xl"
+						>
 							{item.label}
 						</a>
 					</li>
@@ -17,7 +20,7 @@ import PrimaryCTA from "./PrimaryCTA.astro";
 			}
 		</ul>
 		<div class="mt-8">
-			<PrimaryCTA class="w-full justify-center sm:w-auto" tone="citrus" />
+			<PrimaryCTA class="w-full justify-center sm:w-auto" tone="citrus" ring="citrus" />
 		</div>
 	</nav>
 </div>
