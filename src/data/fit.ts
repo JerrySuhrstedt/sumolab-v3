@@ -1,5 +1,5 @@
 export const fitFor: string[] = [
-	"The business is established and generating $5M+ in annual revenue",
+	"The business is established and generating $5M to $50M in annual revenue",
 	"Leadership has ambitious but practical growth objectives",
 	"Marketing lacks senior direction, not just execution capacity",
 	"There's a team, budget, vendors, or activity that needs stronger coordination",
