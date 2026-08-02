@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Eyebrow from "../../components/Eyebrow.astro";
+import PrimaryCTA from "../../components/PrimaryCTA.astro";
+import { insights } from "../../data/insights";
+
+export function getStaticPaths() {
+	return insights.map((insight) => ({
+		params: { slug: insight.slug },
+		props: { insight },
+	}));
+}
+
+const { insight } = Astro.props;
+
+const publishedDate = new Date(insight.publishedAt).toLocaleDateString("en-US", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+	timeZone: "UTC",
+});
+---
+
+<Layout title={`${insight.title} | SumoLab Insights`} description={insight.excerpt}>
+	<main>
+		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
+			<Eyebrow>
+				{insight.category} &middot; {publishedDate}
+			</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-ink">{insight.title}</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-neutral">{insight.excerpt}</p>
+		</Section>
+
+		<Section tone="white">
+			<div class="mx-auto flex max-w-3xl flex-col gap-6">
+				{insight.body.map((paragraph) => <p class="text-supporting text-lg text-brand-ink">{paragraph}</p>)}
+				{
+					insight.keyPoints && (
+						<ul class="mt-4 flex flex-col gap-4 border-t border-brand-neutral-soft pt-8">
+							{insight.keyPoints.map((point) => (
+								<li class="flex items-start gap-3">
+									<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-purple" aria-hidden="true" />
+									<span class="text-supporting text-brand-ink">{point}</span>
+								</li>
+							))}
+						</ul>
+					)
+				}
+			</div>
+		</Section>
+
+		<Section tone="purple">
+			<div class="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+				<h2 class="text-statement max-w-xl text-huge text-brand-white">Want senior marketing leadership on your team?</h2>
+				<PrimaryCTA tone="citrus" ring="citrus" />
+			</div>
+		</Section>
+	</main>
+</Layout>

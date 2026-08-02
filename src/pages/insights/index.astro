@@ -31,6 +31,7 @@ import { insights } from "../../data/insights";
 								href={`/insights/${article.slug}`}
 								class="flex flex-col gap-3 border border-brand-neutral-soft bg-brand-white p-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
 							>
+								<p class="text-label text-brand-neutral">{article.category}</p>
 								<h2 class="text-statement text-xl text-brand-ink">{article.title}</h2>
 								<p class="text-supporting text-brand-neutral">{article.excerpt}</p>
 							</a>
