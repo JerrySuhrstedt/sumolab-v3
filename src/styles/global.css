@@ -20,6 +20,11 @@
 	--font-display: var(--font-sans);
 
 	--container-content: 90rem;
+
+	/* Fluid headline scale — single class replaces the old text-5xl sm:text-6xl lg:text-7xl
+	   triplets, and scales much larger on wide viewports (editorial, edge-pushing scale). */
+	--text-mega: clamp(3rem, 9vw, 9rem);
+	--text-huge: clamp(2.25rem, 6vw, 5.5rem);
 }
 
 /* Typography tokens: reusable roles referenced across header/footer components. */
@@ -80,7 +85,7 @@
 
 @utility text-statement {
 	font-family: var(--font-display);
-	font-weight: 800;
+	font-weight: 700;
 	line-height: 1.02;
 	letter-spacing: -0.02em;
 }
