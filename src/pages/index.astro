@@ -183,16 +183,27 @@ const structuredData = {
 			<h2 class="text-statement mt-4 max-w-2xl text-4xl text-brand-offwhite sm:text-5xl">
 				Don't take our word for it.
 			</h2>
-			<div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
+			<div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
 				{
 					testimonials.map((t) => (
 						<div class="border border-brand-offwhite/15 p-8">
-							<div class="flex gap-1 text-brand-citrus" aria-hidden="true">
+							<div class="flex items-center gap-4">
+								<img
+									src={t.photoSrc}
+									alt={t.name}
+									width="56"
+									height="56"
+									class="h-14 w-14 rounded-full object-cover"
+								/>
+								<div>
+									<p class="text-supporting font-semibold text-brand-offwhite">{t.name}</p>
+									<p class="text-legal text-brand-offwhite/60">{t.title}</p>
+								</div>
+							</div>
+							<div class="mt-4 flex gap-1 text-brand-citrus" aria-hidden="true">
 								{"★★★★★"}
 							</div>
 							<p class="text-supporting mt-4 text-brand-offwhite/90">&ldquo;{t.quote}&rdquo;</p>
-							<p class="text-supporting mt-6 font-semibold text-brand-offwhite">{t.name}</p>
-							<p class="text-legal text-brand-offwhite/60">{t.title}</p>
 						</div>
 					))
 				}

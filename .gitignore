@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# raw WordPress site export — reference only, not project assets
+media_files/
