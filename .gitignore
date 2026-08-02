@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # raw WordPress site export — reference only, not project assets
 media_files/
+
+# third-party inspiration screenshots — mood reference only, not our content
+reference web site styles/

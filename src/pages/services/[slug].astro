@@ -33,7 +33,7 @@ const structuredData = {
 	<main>
 		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
 			<Eyebrow>Services</Eyebrow>
-			<h1 class="text-statement mt-4 max-w-3xl text-4xl text-brand-ink sm:text-5xl">{service.name}</h1>
+			<h1 class="text-statement mt-4 max-w-3xl text-5xl text-brand-ink sm:text-6xl lg:text-7xl">{service.name}</h1>
 			<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-neutral">{service.tagline}</p>
 			<div class="mt-8">
 				<PrimaryCTA tone="citrus" />
@@ -64,7 +64,7 @@ const structuredData = {
 
 		<Section tone="offwhite">
 			<Eyebrow>What's included</Eyebrow>
-			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">What this engagement covers.</h2>
+			<h2 class="text-statement mt-4 max-w-2xl text-4xl text-brand-ink sm:text-5xl">What this engagement covers.</h2>
 			<div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
 				{
 					service.includes.map((item) => (
@@ -79,7 +79,7 @@ const structuredData = {
 
 		<Section tone="white">
 			<Eyebrow>How it works</Eyebrow>
-			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">The engagement, step by step.</h2>
+			<h2 class="text-statement mt-4 max-w-2xl text-4xl text-brand-ink sm:text-5xl">The engagement, step by step.</h2>
 			<ol class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
 				{
 					service.howItWorks.map((step, index) => (
@@ -94,7 +94,7 @@ const structuredData = {
 
 		<Section tone="ink">
 			<Eyebrow tone="citrus">Outcomes</Eyebrow>
-			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-offwhite sm:text-4xl">
+			<h2 class="text-statement mt-4 max-w-2xl text-4xl text-brand-offwhite sm:text-5xl">
 				What changes for your business.
 			</h2>
 			<ul class="mt-10 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
@@ -142,7 +142,7 @@ const structuredData = {
 
 		<Section tone="white">
 			<Eyebrow>FAQ</Eyebrow>
-			<h2 class="text-statement mt-4 max-w-2xl text-3xl text-brand-ink sm:text-4xl">Common questions.</h2>
+			<h2 class="text-statement mt-4 max-w-2xl text-4xl text-brand-ink sm:text-5xl">Common questions.</h2>
 			<div class="mt-10 max-w-3xl">
 				<FaqAccordion items={service.faqs} />
 			</div>
