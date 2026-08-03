@@ -9,12 +9,15 @@ interface Props {
 	description?: string;
 	/** JSON-LD object(s) to embed as structured data for this page. */
 	structuredData?: Record<string, unknown> | Record<string, unknown>[];
+	/** Header starts transparent over a hero image, then solidifies on scroll. */
+	transparentHeader?: boolean;
 }
 
 const {
 	title = "SumoLab | Fractional Marketing Leadership",
 	description = "SumoLab provides fractional marketing direction and strategic consulting for established businesses ready to create focus, alignment, and accountable growth.",
 	structuredData,
+	transparentHeader = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -52,7 +55,7 @@ const structuredDataList = structuredData
 		}
 	</head>
 	<body class="bg-brand-offwhite text-brand-ink">
-		<SiteHeader />
+		<SiteHeader transparentOnHero={transparentHeader} />
 		<MobileMenuPanel />
 		<slot />
 		<SiteFooter />
