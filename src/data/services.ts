@@ -32,7 +32,7 @@ export const fractionalCMO: Service = {
 	summary:
 		"Board-level marketing leadership: strategy, direction, and accountability at the executive table. A Fractional CMO works at the highest strategic level, involved in leadership discussions and long-term brand and growth strategy, without the cost of a full-time hire.",
 	situation:
-		"Your business needs a senior marketing voice at the leadership table, not just someone running campaigns. Growth decisions are being made without real marketing expertise in the room.",
+		"Your marketing looks busy, but results feel random. Leads fluctuate. Messaging changes by channel. Vendors execute without a unified plan. Sales and marketing operate on different assumptions. You end up paying for activity instead of outcomes.",
 	symptoms: [
 		"No senior marketing perspective in leadership or board discussions",
 		"Long-term brand and growth strategy isn't clearly owned by anyone",
@@ -42,20 +42,18 @@ export const fractionalCMO: Service = {
 	],
 	includes: [
 		{
-			title: "Executive-level strategy",
-			description: "Long-term brand and growth strategy set at the leadership table, not delegated downward.",
+			title: "Executive leadership without full-time cost",
+			description: "Senior-level marketing leadership at a fraction of the cost of a full-time CMO. No long-term contracts, no overhead.",
 		},
 		{
-			title: "Board and leadership involvement",
-			description: "A senior marketing voice in the executive discussions where growth decisions actually get made.",
+			title: "Team and vendor direction",
+			description:
+				"You stop managing marketing like a collection of projects. We lead the function, set priorities, run cadence, and keep execution moving across internal staff and outside partners.",
 		},
 		{
-			title: "Team and vendor leadership",
-			description: "One senior point of accountability coordinating your internal team, agencies, and vendors.",
-		},
-		{
-			title: "Metrics and reporting",
-			description: "Marketing metrics and reporting tied to business outcomes, not vanity numbers.",
+			title: "Performance tracking and optimization",
+			description:
+				"Clear reporting on what's working: funnel metrics, cost per lead, conversion rates, and pipeline impact, optimized based on data.",
 		},
 	],
 	howItWorks: [
@@ -88,6 +86,11 @@ export const fractionalCMO: Service = {
 				"Both operate under the same fractional model. A Fractional CMO typically works at a higher strategic level, involved with executive leadership, board discussions, and long-term brand and growth strategy. A Fractional Marketing Director works closer to the operational side, guiding strategy while also overseeing execution, systems, and day-to-day marketing.",
 		},
 		{
+			question: "How is a Fractional CMO different from a marketing agency?",
+			answer:
+				"An agency executes tasks. A Fractional CMO owns the strategy and leads the marketing function, including priorities, budgets, messaging, vendor oversight, and performance management.",
+		},
+		{
 			question: "How much does a full-time CMO cost compared to this?",
 			answer:
 				"A full-time Marketing Director or CMO often costs $150,000 to $300,000 per year once salary, benefits, bonuses, and overhead are included. A Fractional CMO gives you that same senior-level thinking at a fraction of the cost.",
@@ -112,7 +115,7 @@ export const fractionalMarketingDirector: Service = {
 	summary:
 		"An experienced marketing leader who sets strategy and also oversees execution, systems, and day-to-day marketing operations, on a fractional basis. You get senior leadership closer to the operational work, without the cost, delay, or risk of a full-time hire.",
 	situation:
-		"Your business has outgrown ad hoc marketing, but you're not ready to hire a full-time executive. Decisions keep landing on your desk, and no one owns the outcome, or the execution.",
+		"Your marketing looks busy, but results feel random. Leads fluctuate. Messaging changes by channel. Vendors execute without a unified plan. Sales and marketing operate on different assumptions. You end up paying for activity instead of outcomes.",
 	symptoms: [
 		"Marketing decisions still route through the founder or CEO",
 		"Multiple vendors and freelancers with no one coordinating the work",
@@ -122,20 +125,18 @@ export const fractionalMarketingDirector: Service = {
 	],
 	includes: [
 		{
-			title: "Marketing strategy",
-			description: "A clear marketing strategy, brand positioning, and messaging tied to your business goals.",
+			title: "Executive leadership without full-time cost",
+			description: "Senior-level marketing leadership at a fraction of the cost of a full-time Marketing Director. No long-term contracts, no overhead.",
 		},
 		{
-			title: "Sales and lead-gen alignment",
-			description: "Marketing aligned with sales objectives, plus the lead generation systems that feed them.",
+			title: "Team and vendor direction",
+			description:
+				"You stop managing marketing like a collection of projects. We lead the function, set priorities, run cadence, and keep execution moving across internal staff and outside partners.",
 		},
 		{
-			title: "Website and CRM systems",
-			description: "Website strategy, conversion optimization, and CRM or marketing automation implementation.",
-		},
-		{
-			title: "Agency and vendor management",
-			description: "One senior point of accountability managing agencies and marketing vendors day to day.",
+			title: "Performance tracking and optimization",
+			description:
+				"Clear reporting on what's working: funnel metrics, cost per lead, conversion rates, and pipeline impact, optimized based on data.",
 		},
 	],
 	howItWorks: [
