@@ -20,8 +20,9 @@
 /service/fractional-marketing-director-scottsdale-az/ /services/fractional-marketing-director/ 301
 /service/fractional-marketing-director-tempe-az/ /services/fractional-marketing-director/ 301
 
-# Case studies index + individual studies (slugs were renamed)
-/case-studies/ /case-studies/ 301
+# Individual case studies (slugs were renamed). The old case-studies index
+# was already at /case-studies/, same as the new one, so no redirect needed
+# there — a self-redirect was causing ERR_TOO_MANY_REDIRECTS.
 /case-study/case-study-rebranding-first-products-with-memorable-cartoon-characters/ /case-studies/rebranding-first-products/ 301
 /case-study/case-study-revitalizing-hiline-homes-sales-through-dynamic-marketing-strategies/ /case-studies/hiline-homes-sales-growth/ 301
 /case-study/case-study-seamless-transition-from-marketo-to-salesforce-account-engagement-pardot/ /case-studies/marketo-to-pardot-migration/ 301
