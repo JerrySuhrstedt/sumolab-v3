@@ -10,6 +10,7 @@ export const primaryNav: NavLink[] = [
 	{ label: "Case Studies", href: "/case-studies" },
 	{ label: "About", href: "/about" },
 	{ label: "Insights", href: "/insights" },
+	{ label: "Contact", href: "/contact" },
 ];
 
 export const primaryCta: NavLink = {
@@ -24,6 +25,7 @@ export const footerNav = {
 		{ label: "Who It's For", href: "/who-its-for" },
 		{ label: "Case Studies", href: "/case-studies" },
 		{ label: "Insights", href: "/insights" },
+		{ label: "Contact", href: "/contact" },
 	] satisfies NavLink[],
 	services: [
 		{ label: "Fractional CMO", href: "/services/fractional-cmo" },
