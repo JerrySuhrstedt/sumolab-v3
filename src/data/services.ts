@@ -185,7 +185,91 @@ export const fractionalMarketingDirector: Service = {
 	],
 };
 
-export const services: Service[] = [fractionalCMO, fractionalMarketingDirector];
+export const fractionalAIAdvisor: Service = {
+	slug: "fractional-ai-advisor",
+	name: "Fractional AI Advisor",
+	shortName: "Fractional AI Advisor",
+	tagline: "Senior business judgment applied to AI, pointed at the one or two places it can actually move profit.",
+	summary:
+		"AI leadership for owners who are done experimenting. I bring senior business judgment to the one question most consultants can't answer: where AI actually belongs in your business. Working across every function, finance, operations, marketing, sales, HR, I find the highest-payoff place to start, put AI to work, and prove the return. Not a technologist. An operator who's run twelve companies and knows what moves profit.",
+	situation:
+		"You've been told to \"experiment with AI,\" so you have: a chatbot pilot here, an automation tool there, a subscription finance never asked for. None of it is tied to a plan, and MIT found that 95% of corporate AI projects like this return nothing. The tools aren't the problem. The absence of business judgment pointing them is.",
+	symptoms: [
+		"AI initiatives exist in pockets, marketing, ops, support, with no one connecting them to a strategy",
+		"Leadership feels pressure to \"do something with AI\" without a clear read on where it actually pays off",
+		"Tools get purchased before the problem they're solving is fully understood",
+		"No one senior enough is accountable for whether AI spend produces a return",
+		"The business relies on hype and vendor pitches instead of operating experience",
+	],
+	includes: [
+		{
+			title: "Business-wide AI opportunity mapping",
+			description:
+				"A full read of your business, finance, operations, marketing, sales, HR, to find the one or two places AI can actually move profit, instead of a scattershot pilot with no plan behind it.",
+		},
+		{
+			title: "Practical implementation, not slide decks",
+			description:
+				"I put the tools to work myself and stay until they're earning their keep. You get an operator in the work, not a strategy deck and a goodbye.",
+		},
+		{
+			title: "Measurable return, not hype",
+			description:
+				"Clear before-and-after numbers on cost, time, and output, so you know exactly what AI is worth to the business, not just that it's \"in use.\"",
+		},
+	],
+	howItWorks: [
+		"Start with a full read of your business, finance, operations, marketing, sales, HR, to find where AI can actually move profit.",
+		"Get a focused starting point and a plan within the first weeks, not a 40-page roadmap.",
+		"I put the tools to work directly and prove the return before we expand further.",
+		"Scale to the next highest-payoff area once the first one is earning its keep.",
+	],
+	outcomes: [
+		"AI pointed at the part of the business where it actually pays off",
+		"A senior operator doing the work, not just advising from the sidelines",
+		"Proof of return before further investment, not another pilot that quietly dies",
+		"Judgment across the whole business, not a single-function view of what AI should touch",
+		"No more spend on tools chosen by hype instead of fit",
+	],
+	whoItsFor: [
+		"Companies generating $5M to $50M in annual revenue",
+		"Leadership teams that know AI matters but don't know where to point it first",
+		"Businesses that have already tried a pilot or two without seeing a return",
+		"Owners who want an operator doing the work, not a slide deck and a consultant who disappears",
+	],
+	whoItsNotFor: [
+		"Very early-stage businesses without existing operations to apply AI to",
+		"Companies looking for a pure technologist to build custom software, not senior business judgment",
+	],
+	faqs: [
+		{
+			question: "How is this different from a Fractional CMO or Fractional Marketing Director?",
+			answer:
+				"Those two are marketing-specific. A Fractional AI Advisor engagement looks across the whole business, finance, operations, marketing, sales, HR, to find where AI belongs, not just inside the marketing function.",
+		},
+		{
+			question: "How is this different from hiring an AI consultant or technologist?",
+			answer:
+				"A technologist tells you what's technically possible. I bring the business judgment to decide what's actually worth doing, then put it to work and prove the return, not just the technical build.",
+		},
+		{
+			question: "Do I need to already have AI initiatives underway?",
+			answer:
+				"No. Most clients start here because they don't know where to begin, or already tried something that didn't return anything.",
+		},
+		{
+			question: "What size company is this built for?",
+			answer: "Established businesses generating $5M to $50M in annual revenue with real operations to apply AI to.",
+		},
+		{
+			question: "Can this convert to a full-time hire or a different engagement later?",
+			answer:
+				"Yes. Many clients start here, then bring me on for broader Fractional CMO or Marketing Director leadership once the AI work proves out, or vice versa.",
+		},
+	],
+};
+
+export const services: Service[] = [fractionalCMO, fractionalMarketingDirector, fractionalAIAdvisor];
 
 export function getServiceBySlug(slug: string): Service | undefined {
 	return services.find((service) => service.slug === slug);

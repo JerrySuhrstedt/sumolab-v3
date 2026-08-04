@@ -9,22 +9,23 @@ import { services } from "../../data/services";
 
 <Layout
 	title="Services | SumoLab"
-	description="SumoLab offers two ways to get senior marketing leadership: a Fractional CMO for board-level strategy, and a Fractional Marketing Director for hands-on operational leadership."
+	description="SumoLab offers three ways to put senior leadership to work: a Fractional CMO for board-level strategy, a Fractional Marketing Director for hands-on operational leadership, and a Fractional AI Advisor to find where AI actually moves profit."
 >
 	<main>
 		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
 			<Eyebrow>Services</Eyebrow>
 			<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-ink">
-				Two ways to get senior marketing leadership.
+				Three ways to put senior leadership to work.
 			</h1>
 			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
-				Both models run on the same fractional principle: senior leadership without the full-time cost. The
-				difference is altitude, board-level strategy versus hands-on operational leadership, not commitment.
+				All three run on the same fractional principle: senior leadership without the full-time cost. Two are
+				marketing-specific, board-level strategy versus hands-on operational leadership. The third looks across
+				your whole business to find where AI actually belongs.
 			</p>
 		</Section>
 
 		<Section tone="white">
-			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{services.map((service) => <ServiceCard service={service} />)}
 			</div>
 		</Section>
