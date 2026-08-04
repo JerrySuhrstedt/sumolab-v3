@@ -43,8 +43,9 @@ const categories = [
 
 		{
 			insights.length > 0 && (
-				<Section tone="white" class="pb-0!">
-					<div class="flex flex-wrap gap-3" id="category-filters">
+				<div class="bg-brand-white">
+					<div class="mx-auto max-w-(--container-content) px-6 pt-5 pb-5 md:px-10 lg:px-12">
+						<div class="flex flex-wrap gap-3" id="category-filters">
 						<button
 							type="button"
 							data-category="all"
@@ -61,8 +62,9 @@ const categories = [
 								{category}
 							</button>
 						))}
+						</div>
 					</div>
-				</Section>
+				</div>
 			)
 		}
 
