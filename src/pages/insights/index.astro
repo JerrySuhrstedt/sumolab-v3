@@ -11,16 +11,26 @@ import { insights } from "../../data/insights";
 	description="Practical perspective on marketing leadership, strategy, and growth for established businesses. New articles coming soon."
 >
 	<main>
-		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
-			<Eyebrow>Insights</Eyebrow>
-			<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-ink">
-				Practical perspective on marketing leadership.
-			</h1>
-			<p class="text-supporting mt-6 max-w-2xl text-brand-neutral">
-				Notes on strategy, leadership, and growth for established businesses, written by people who do the
-				work.
-			</p>
-		</Section>
+		<section class="relative isolate overflow-hidden">
+			<img
+				src="/photos/insights-hero.jpg"
+				alt="Two colleagues reviewing results together"
+				width="2752"
+				height="1536"
+				class="absolute inset-0 h-full w-full object-cover"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-r from-brand-ink/85 via-brand-ink/60 to-brand-ink/25" aria-hidden="true"></div>
+			<div class="relative mx-auto max-w-(--container-content) px-6 py-10 md:px-10 md:py-14 lg:px-12">
+				<Eyebrow tone="citrus">Insights</Eyebrow>
+				<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-offwhite">
+					Practical perspective on marketing leadership.
+				</h1>
+				<p class="text-supporting mt-6 max-w-2xl text-[2rem] font-semibold leading-snug text-brand-offwhite">
+					Notes on strategy, leadership, and growth for established businesses, written by people who do the
+					work.
+				</p>
+			</div>
+		</section>
 
 		<Section tone="white">
 			{
