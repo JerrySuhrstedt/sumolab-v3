@@ -4,6 +4,7 @@ import Section from "../../components/Section.astro";
 import Eyebrow from "../../components/Eyebrow.astro";
 import PrimaryCTA from "../../components/PrimaryCTA.astro";
 import { insights } from "../../data/insights";
+import { founder } from "../../data/founder";
 
 export function getStaticPaths() {
 	return insights.map((insight) => ({
@@ -33,13 +34,32 @@ const publishedDate = new Date(insight.publishedAt).toLocaleDateString("en-US", 
 				<Eyebrow tone="citrus">
 					{insight.category} &middot; {publishedDate}
 				</Eyebrow>
-				<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-offwhite">{insight.title}</h1>
+				<h1 class="text-statement mt-4 text-mega text-brand-offwhite">{insight.title}</h1>
 				<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-offwhite/85">{insight.excerpt}</p>
 			</div>
 		</section>
 
 		<Section tone="white">
 			<div class="mx-auto flex max-w-3xl flex-col gap-6">
+				<div class="flex flex-col gap-5 border-b border-brand-neutral-soft pb-8">
+					<h2 class="text-statement text-[3rem] leading-[1.1] font-bold text-brand-ink">{insight.title}</h2>
+					<p class="text-supporting text-xl text-brand-neutral">{insight.excerpt}</p>
+					<div class="flex items-center gap-3">
+						{founder.headshotSrc && (
+							<img
+								src={founder.headshotSrc}
+								alt={founder.name ?? "Author"}
+								width="48"
+								height="48"
+								class="h-12 w-12 rounded-full object-cover"
+							/>
+						)}
+						<div class="flex flex-col">
+							<span class="text-supporting font-semibold text-brand-ink">{founder.name}</span>
+							<span class="text-label text-brand-neutral">{publishedDate}</span>
+						</div>
+					</div>
+				</div>
 				{insight.body.map((paragraph) => <p class="text-supporting text-lg text-brand-ink">{paragraph}</p>)}
 				{
 					insight.keyPoints && (
