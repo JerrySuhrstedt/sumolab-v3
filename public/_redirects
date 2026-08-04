@@ -8,16 +8,16 @@
 /lp/fractional-marketing-director/ /services/fractional-marketing-director/ 301
 
 # Services (old slug had a city suffix, "service" was singular).
-# The old site had 7 near-duplicate city-variant service pages (Chandler,
-# Phoenix, Scottsdale, Tempe); all consolidate into the same two canonical
-# service pages here rather than becoming 7 near-duplicate pages.
-/service/fractional-cmo-chandler-az/ /services/fractional-cmo/ 301
-/service/fractional-cmo-phoenix-az/ /services/fractional-cmo/ 301
-/service/fractional-cmo-scottsdale-az/ /services/fractional-cmo/ 301
-/service/fractional-marketing-director-chandler-az/ /services/fractional-marketing-director/ 301
-/service/fractional-marketing-director-phoenix-az/ /services/fractional-marketing-director/ 301
-/service/fractional-marketing-director-scottsdale-az/ /services/fractional-marketing-director/ 301
-/service/fractional-marketing-director-tempe-az/ /services/fractional-marketing-director/ 301
+# The old site's 7 city-variant service pages had a broken copy-paste bug
+# (Chandler's body copy leaked into every other city's page) and were
+# rebuilt from scratch as real, unique pages at /services/[service]/[city]/.
+/service/fractional-cmo-chandler-az/ /services/fractional-cmo/chandler/ 301
+/service/fractional-cmo-phoenix-az/ /services/fractional-cmo/phoenix/ 301
+/service/fractional-cmo-scottsdale-az/ /services/fractional-cmo/scottsdale/ 301
+/service/fractional-marketing-director-chandler-az/ /services/fractional-marketing-director/chandler/ 301
+/service/fractional-marketing-director-phoenix-az/ /services/fractional-marketing-director/phoenix/ 301
+/service/fractional-marketing-director-scottsdale-az/ /services/fractional-marketing-director/scottsdale/ 301
+/service/fractional-marketing-director-tempe-az/ /services/fractional-marketing-director/tempe/ 301
 
 # Individual case studies (slugs were renamed). The old case-studies index
 # was already at /case-studies/, same as the new one, so no redirect needed

@@ -6,6 +6,8 @@ import PrimaryCTA from "../components/PrimaryCTA.astro";
 import FaqAccordion from "../components/FaqAccordion.astro";
 import { testimonials } from "../data/testimonials";
 import { founder } from "../data/founder";
+import { contact } from "../data/contact";
+import { cities } from "../data/cities";
 
 const heroChecks = [
 	"Replace Agency Chaos With Leadership",
@@ -75,7 +77,19 @@ const structuredData = {
 	name: "SumoLab",
 	description: "SumoLab provides fractional CMO leadership for established businesses generating $5M+ in annual revenue.",
 	url: "https://sumolab.co",
-	areaServed: "US",
+	telephone: contact.phoneHref ?? undefined,
+	address: contact.location
+		? {
+				"@type": "PostalAddress",
+				addressLocality: contact.location.split(",")[0]?.trim(),
+				addressRegion: "AZ",
+				addressCountry: "US",
+			}
+		: undefined,
+	areaServed: cities.map((city) => ({
+		"@type": "City",
+		name: `${city.name}, ${city.state}`,
+	})),
 };
 ---
 

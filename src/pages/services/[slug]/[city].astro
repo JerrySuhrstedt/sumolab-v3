@@ -1,44 +1,63 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Section from "../../components/Section.astro";
-import Eyebrow from "../../components/Eyebrow.astro";
-import PrimaryCTA from "../../components/PrimaryCTA.astro";
-import FaqAccordion from "../../components/FaqAccordion.astro";
-import { services } from "../../data/services";
-import { cities } from "../../data/cities";
+import Layout from "../../../layouts/Layout.astro";
+import Section from "../../../components/Section.astro";
+import Eyebrow from "../../../components/Eyebrow.astro";
+import PrimaryCTA from "../../../components/PrimaryCTA.astro";
+import FaqAccordion from "../../../components/FaqAccordion.astro";
+import { services } from "../../../data/services";
+import { cities } from "../../../data/cities";
 
 export function getStaticPaths() {
-	return services.map((service) => ({
-		params: { slug: service.slug },
-		props: { service },
-	}));
+	return services.flatMap((service) =>
+		cities.map((city) => ({
+			params: { slug: service.slug, city: city.slug },
+			props: { service, city },
+		})),
+	);
 }
 
-const { service } = Astro.props;
+const { service, city } = Astro.props;
+
+const cityFaq = {
+	question: `What types of ${city.name} businesses are a good fit?`,
+	answer: city.goodFitNote,
+};
+const faqs = [cityFaq, ...service.faqs];
+
+const nearbyCities = city.nearby.map((name) => cities.find((c) => c.name === name)).filter((c): c is NonNullable<typeof c> => Boolean(c));
+
+const title = `${service.name} in ${city.name}, ${city.state} | SumoLab`;
+const description = `${service.name} for established ${city.name}, ${city.state} businesses ready to scale. ${service.tagline}`;
 
 const structuredData = {
 	"@context": "https://schema.org",
 	"@type": "Service",
-	name: service.name,
+	name: `${service.name} in ${city.name}, ${city.state}`,
 	description: service.summary,
 	provider: {
 		"@type": "ProfessionalService",
 		name: "SumoLab",
 		url: "https://sumolab.co",
 	},
-	areaServed: cities.map((city) => ({
+	areaServed: {
 		"@type": "City",
 		name: `${city.name}, ${city.state}`,
-	})),
+	},
 };
 ---
 
-<Layout title={`${service.name} | SumoLab`} description={service.summary} structuredData={structuredData}>
+<Layout title={title} description={description} structuredData={structuredData}>
 	<main>
 		<Section tone="offwhite" class="pt-14 pb-16 md:pt-20">
-			<Eyebrow>Services</Eyebrow>
-			<h1 class="text-statement mt-4 max-w-3xl text-mega text-brand-ink">{service.name}</h1>
-			<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-neutral">{service.tagline}</p>
+			<Eyebrow>
+				Services · {city.name}, {city.state}
+			</Eyebrow>
+			<h1 class="text-statement mt-4 max-w-3xl text-huge leading-[1.05] text-brand-ink">
+				{service.name} in {city.name}, {city.state}
+			</h1>
+			<p class="text-supporting mt-6 max-w-2xl text-lg text-brand-neutral">
+				{city.hook}
+			</p>
 			<div class="mt-8">
 				<PrimaryCTA tone="citrus" />
 			</div>
@@ -47,11 +66,14 @@ const structuredData = {
 		<Section tone="white">
 			<div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
 				<div class="lg:col-span-5">
-					<Eyebrow>The situation</Eyebrow>
+					<Eyebrow>
+						The {city.name} landscape
+					</Eyebrow>
 					<h2 class="text-statement mt-4 text-2xl text-brand-ink sm:text-3xl">{service.situation}</h2>
 				</div>
 				<div class="lg:col-span-7 lg:pt-2">
-					<p class="text-label text-brand-neutral">Common symptoms</p>
+					<p class="text-supporting text-brand-ink">{city.landscape}</p>
+					<p class="text-label mt-8 text-brand-neutral">Common symptoms</p>
 					<ul class="mt-5 flex flex-col gap-4">
 						{
 							service.symptoms.map((symptom) => (
@@ -99,7 +121,7 @@ const structuredData = {
 		<Section tone="ink">
 			<Eyebrow tone="citrus">Outcomes</Eyebrow>
 			<h2 class="text-statement mt-4 max-w-2xl text-huge text-brand-offwhite">
-				What changes for your business.
+				What changes for your {city.name} business.
 			</h2>
 			<ul class="mt-10 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
 				{
@@ -148,35 +170,37 @@ const structuredData = {
 			<Eyebrow>FAQ</Eyebrow>
 			<h2 class="text-statement mt-4 max-w-2xl text-huge text-brand-ink">Common questions.</h2>
 			<div class="mt-10 max-w-3xl">
-				<FaqAccordion items={service.faqs} />
+				<FaqAccordion items={faqs} />
 			</div>
 		</Section>
 
-		<Section tone="offwhite">
-			<Eyebrow>Service areas</Eyebrow>
-			<h2 class="text-statement mt-4 max-w-2xl text-2xl text-brand-ink sm:text-3xl">
-				Serving established businesses across the Phoenix metro.
-			</h2>
-			<ul class="mt-8 flex flex-wrap gap-4">
-				{
-					cities.map((city) => (
-						<li>
-							<a
-								href={`/services/${service.slug}/${city.slug}/`}
-								class="text-button inline-flex items-center gap-2 rounded-sm border border-brand-neutral-soft px-5 py-3 text-brand-ink transition-colors duration-150 hover:border-brand-purple hover:text-brand-purple"
-							>
-								{service.name} in {city.name}, {city.state}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</Section>
+		{
+			nearbyCities.length > 0 && (
+				<Section tone="offwhite">
+					<Eyebrow>Also serving</Eyebrow>
+					<h2 class="text-statement mt-4 max-w-2xl text-2xl text-brand-ink sm:text-3xl">
+						{service.name} in nearby areas.
+					</h2>
+					<ul class="mt-8 flex flex-wrap gap-4">
+						{nearbyCities.map((nearby) => (
+							<li>
+								<a
+									href={`/services/${service.slug}/${nearby.slug}/`}
+									class="text-button inline-flex items-center gap-2 rounded-sm border border-brand-neutral-soft px-5 py-3 text-brand-ink transition-colors duration-150 hover:border-brand-purple hover:text-brand-purple"
+								>
+									{nearby.name}, {nearby.state}
+								</a>
+							</li>
+						))}
+					</ul>
+				</Section>
+			)
+		}
 
 		<Section tone="purple">
 			<div class="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
 				<h2 class="text-statement max-w-xl text-huge text-brand-white">
-					Let's talk about whether {service.shortName.toLowerCase()} is the right fit.
+					Let's talk about whether {service.shortName.toLowerCase()} is the right fit for your {city.name} business.
 				</h2>
 				<PrimaryCTA tone="citrus" ring="citrus" />
 			</div>
