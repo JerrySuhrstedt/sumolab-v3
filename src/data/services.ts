@@ -269,7 +269,7 @@ export const fractionalAIAdvisor: Service = {
 	],
 };
 
-export const services: Service[] = [fractionalCMO, fractionalMarketingDirector, fractionalAIAdvisor];
+export const services: Service[] = [fractionalAIAdvisor, fractionalMarketingDirector, fractionalCMO];
 
 export function getServiceBySlug(slug: string): Service | undefined {
 	return services.find((service) => service.slug === slug);
