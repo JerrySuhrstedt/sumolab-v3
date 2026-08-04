@@ -14,7 +14,7 @@ export const insights: InsightArticle[] = [
 		slug: "creating-a-seamless-brand-experience-consistency",
 		imageSrc: "/insights/creating-a-seamless-brand-experience-consistency.jpg",
 		title: "Creating a Seamless Brand Experience: Consistency Across Social Media Channels",
-		category: "Branding",
+		category: "Marketing & Growth",
 		publishedAt: "2024-10-15",
 		excerpt:
 			"Maintaining a consistent brand voice and visual identity across every social platform builds trust and strengthens recognition, even though each platform has its own style and expectations.",
@@ -30,7 +30,7 @@ export const insights: InsightArticle[] = [
 		slug: "digital-marketing-strategies-tips-best-practices",
 		imageSrc: "/insights/digital-marketing-strategies-tips-best-practices.jpg",
 		title: "Digital Marketing: Strategies, Tips, Best Practices",
-		category: "Digital Marketing",
+		category: "Marketing & Growth",
 		publishedAt: "2024-06-17",
 		excerpt:
 			"Digital marketing blends traditional marketing goals with modern technology. A look at why it matters, the channels that make it up, and how to build a strategy around clear objectives.",
@@ -49,7 +49,7 @@ export const insights: InsightArticle[] = [
 		slug: "high-quality-website-design-elevate-your-online-presence",
 		imageSrc: "/insights/high-quality-website-design-elevate-your-online-presence.jpg",
 		title: "High-Quality Website Design: Elevate Your Online Presence",
-		category: "Website Design",
+		category: "Systems & Automation",
 		publishedAt: "2024-06-17",
 		excerpt:
 			"Professional website design is more than aesthetics: it builds trust, supports SEO, and turns visitors into customers when every element serves a purpose.",
@@ -69,7 +69,7 @@ export const insights: InsightArticle[] = [
 		slug: "10-crazy-benefits-of-podcasting-for-your-business",
 		imageSrc: "/insights/10-crazy-benefits-of-podcasting-for-your-business.jpg",
 		title: "10 Benefits of Podcasting for Your Business",
-		category: "Podcasting",
+		category: "Marketing & Growth",
 		publishedAt: "2024-06-07",
 		excerpt:
 			"From brand authority to SEO and monetization, podcasting has grown from a niche format into a mainstream marketing tool for businesses of every size.",
@@ -90,7 +90,7 @@ export const insights: InsightArticle[] = [
 		slug: "smart-web-design-for-contractors-in-chandler-arizona",
 		imageSrc: "/insights/smart-web-design-for-contractors-in-chandler-arizona.jpg",
 		title: "Smart Web Design for Contractors in Chandler, Arizona",
-		category: "Website Design",
+		category: "Systems & Automation",
 		publishedAt: "2024-06-08",
 		excerpt:
 			"For remodelers, HVAC specialists, plumbers, roofers, and electricians, a well-designed local website is often the deciding factor for a customer choosing between contractors.",
@@ -105,7 +105,7 @@ export const insights: InsightArticle[] = [
 		slug: "why-branding-is-important-the-judy-trudy-success-story",
 		imageSrc: "/insights/why-branding-is-important-the-judy-trudy-success-story.jpg",
 		title: "Why Branding Is Important: The Judy & Trudy Success Story",
-		category: "Branding",
+		category: "Marketing & Growth",
 		publishedAt: "2024-06-11",
 		excerpt:
 			"A 30-year-old medical supply company with a forgettable name became memorable overnight with two cartoon nurse characters and a set of bobble-head dolls.",
@@ -119,7 +119,7 @@ export const insights: InsightArticle[] = [
 		slug: "seo-tools-for-website-traffic-discover-secrets",
 		imageSrc: "/insights/seo-tools-for-website-traffic-discover-secrets.jpg",
 		title: "SEO Tools for Website Traffic: What They Get Wrong",
-		category: "SEO",
+		category: "Marketing & Growth",
 		publishedAt: "2024-06-15",
 		excerpt:
 			"Drawing on experience as CMO of an HR tech brand, a look at why popular SEO tools like Ahrefs and SEMrush can mislead marketers, and where the real opportunity in long-tail keywords actually is.",
@@ -133,7 +133,7 @@ export const insights: InsightArticle[] = [
 		slug: "what-digital-marketing-is-what-it-is-not",
 		imageSrc: "/insights/what-digital-marketing-is-what-it-is-not.jpg",
 		title: "What Digital Marketing Is, and What It Is Not",
-		category: "Digital Marketing",
+		category: "Marketing & Growth",
 		publishedAt: "2024-06-25",
 		excerpt:
 			'A field guide to what actually falls under "digital marketing," from SEO and content to PPC, marketing automation, and conversion rate optimization.',
@@ -155,7 +155,7 @@ export const insights: InsightArticle[] = [
 		slug: "business-turnaround-strategy-bankrupt-to-12m",
 		imageSrc: "/insights/business-turnaround-strategy-bankrupt-to-12m.jpg",
 		title: "My Business Turnaround Strategy: From Bankruptcy to a Multi-Million Dollar Company",
-		category: "Business Management",
+		category: "Strategy & Leadership",
 		publishedAt: "2024-08-20",
 		excerpt:
 			"A first venture into home building ended in Chapter 13 bankruptcy. Here's what went wrong, and how a rebuilt partnership turned it into a thriving company.",
@@ -184,7 +184,7 @@ export const insights: InsightArticle[] = [
 		slug: "do-i-need-a-business-analyst",
 		imageSrc: "/insights/do-i-need-a-business-analyst.jpg",
 		title: "Do I Need a Business Analyst?",
-		category: "Business Analysis",
+		category: "Strategy & Leadership",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"A business analyst specializes in analyzing a company's operations, processes, and data to identify areas for improvement and build strategies for growth.",
@@ -198,7 +198,7 @@ export const insights: InsightArticle[] = [
 		slug: "5-powerful-reasons-you-need-marketing-automation",
 		imageSrc: "/insights/5-powerful-reasons-you-need-marketing-automation.jpg",
 		title: "5 Powerful Reasons You Need Marketing Automation",
-		category: "Marketing Automation",
+		category: "Systems & Automation",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Marketing automation software eliminates busywork, streamlining and improving the effectiveness of a marketing department's efforts.",
@@ -218,7 +218,7 @@ export const insights: InsightArticle[] = [
 		slug: "sales-process-6-powerful-reasons-you-need-one",
 		imageSrc: "/insights/sales-process-6-powerful-reasons-you-need-one.jpg",
 		title: "Sales Process: 6 Powerful Reasons You Need One",
-		category: "Sales",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"A sales process is a systematic approach to selling that helps convert prospects into customers consistently, instead of leaving results up to individual reps.",
@@ -237,7 +237,7 @@ export const insights: InsightArticle[] = [
 		slug: "what-business-analysts-do",
 		imageSrc: "/insights/what-business-analysts-do.jpg",
 		title: "What Business Analysts Actually Do",
-		category: "Business Analysis",
+		category: "Strategy & Leadership",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Ask ten HR professionals what a business analyst does and you'll get ten different answers. Here's how the role actually breaks down.",
@@ -250,7 +250,7 @@ export const insights: InsightArticle[] = [
 		slug: "slack-5-reasons-its-better-for-internal-communication",
 		imageSrc: "/insights/slack-5-reasons-its-better-for-internal-communication.jpg",
 		title: "Slack: 5 Reasons It's Better for Internal Communication",
-		category: "Business Tools",
+		category: "Systems & Automation",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Slack and email both handle internal communication, but Slack's real-time, visible format tends to outperform email for team collaboration.",
@@ -263,7 +263,7 @@ export const insights: InsightArticle[] = [
 		slug: "start-your-salesforce-career",
 		imageSrc: "/insights/start-your-salesforce-career.jpg",
 		title: "How to Start Your Salesforce Career",
-		category: "Salesforce",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Salesforce is the world's #1 CRM platform, used by over 150,000 companies. A practical path into a Salesforce Administrator career, certification by certification.",
@@ -277,7 +277,7 @@ export const insights: InsightArticle[] = [
 		slug: "why-your-business-may-need-salesforce",
 		imageSrc: "/insights/why-your-business-may-need-salesforce.jpg",
 		title: "Why Your Business May Need Salesforce",
-		category: "Salesforce",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Salesforce is a cloud-based CRM that helps businesses streamline scattered processes. Here's why it's become one of the most comprehensive CRM platforms available.",
@@ -290,7 +290,7 @@ export const insights: InsightArticle[] = [
 		slug: "5-reasons-your-business-needs-a-crm",
 		imageSrc: "/insights/5-reasons-your-business-needs-a-crm.jpg",
 		title: "5 Reasons Your Business Needs a CRM",
-		category: "CRM",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Managing customer relationships is crucial to business success, whether you have a handful of customers or thousands. CRM software is the tool built for that job.",
@@ -303,7 +303,7 @@ export const insights: InsightArticle[] = [
 		slug: "do-i-need-a-salesforce-consultant",
 		imageSrc: "/insights/do-i-need-a-salesforce-consultant.jpg",
 		title: "Do I Need a Salesforce Consultant?",
-		category: "Salesforce",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Salesforce consulting partners help implement projects, build custom solutions, and scale a platform, often for less than the cost of a full-time hire.",
@@ -316,7 +316,7 @@ export const insights: InsightArticle[] = [
 		slug: "i-bought-salesforce-now-what",
 		imageSrc: "/insights/i-bought-salesforce-now-what.jpg",
 		title: "I Bought Salesforce, Now What?",
-		category: "Salesforce",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Salesforce can transform how a business manages customer data, but implementing it well usually means bringing in a Salesforce CRM consultant.",
@@ -329,7 +329,7 @@ export const insights: InsightArticle[] = [
 		slug: "what-really-is-a-crm",
 		imageSrc: "/insights/what-really-is-a-crm.jpg",
 		title: "What Really Is a CRM?",
-		category: "CRM",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"CRM stands for Customer Relationship Management, but the real value is turning scattered customer data spread across spreadsheets, inboxes, and notes into one usable system.",
@@ -342,7 +342,7 @@ export const insights: InsightArticle[] = [
 		slug: "why-salesforce-is-the-1-crm",
 		imageSrc: "/insights/why-salesforce-is-the-1-crm.jpg",
 		title: "Why Salesforce Is the #1 CRM",
-		category: "Salesforce",
+		category: "Sales & CRM",
 		publishedAt: "2024-03-24",
 		excerpt:
 			"Salesforce leads the CRM category for a combination of reasons: customization, real-time cloud access, ease of use, and a constant pace of innovation.",
