@@ -4,6 +4,15 @@ import Section from "../../components/Section.astro";
 import Eyebrow from "../../components/Eyebrow.astro";
 import PrimaryCTA from "../../components/PrimaryCTA.astro";
 import { insights } from "../../data/insights";
+
+const categories = [
+	"AI in Business",
+	"Strategy & Leadership",
+	"Marketing & Growth",
+	"Sales & CRM",
+	"Systems & Automation",
+	"Case Studies",
+];
 ---
 
 <Layout
@@ -32,13 +41,39 @@ import { insights } from "../../data/insights";
 			</div>
 		</section>
 
+		{
+			insights.length > 0 && (
+				<Section tone="white" class="pb-0!">
+					<div class="flex flex-wrap gap-3" id="category-filters">
+						<button
+							type="button"
+							data-category="all"
+							class="category-filter-btn is-active border border-brand-ink bg-brand-ink px-4 py-2 text-button text-brand-offwhite transition-colors duration-150"
+						>
+							All
+						</button>
+						{categories.map((category) => (
+							<button
+								type="button"
+								data-category={category}
+								class="category-filter-btn border border-brand-neutral-soft bg-brand-white px-4 py-2 text-button text-brand-ink transition-colors duration-150 hover:border-brand-purple hover:text-brand-purple"
+							>
+								{category}
+							</button>
+						))}
+					</div>
+				</Section>
+			)
+		}
+
 		<Section tone="white">
 			{
 				insights.length > 0 ? (
-					<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" id="insights-grid">
 						{insights.map((article) => (
 							<a
 								href={`/insights/${article.slug}`}
+								data-category={article.category}
 								class="group flex flex-col border border-brand-neutral-soft bg-brand-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple"
 							>
 								<div class="aspect-[4/3] overflow-hidden bg-brand-neutral-soft">
@@ -71,4 +106,46 @@ import { insights } from "../../data/insights";
 			}
 		</Section>
 	</main>
+
+	{
+		insights.length > 0 && (
+			<script>
+				function initInsightsFilter() {
+					const buttons = document.querySelectorAll<HTMLButtonElement>(".category-filter-btn");
+					const cards = document.querySelectorAll<HTMLAnchorElement>("#insights-grid > a");
+					if (buttons.length === 0 || cards.length === 0) return;
+
+					const activeClasses = ["border-brand-ink", "bg-brand-ink", "text-brand-offwhite"];
+					const inactiveClasses = [
+						"border-brand-neutral-soft",
+						"bg-brand-white",
+						"text-brand-ink",
+						"hover:border-brand-purple",
+						"hover:text-brand-purple",
+					];
+
+					buttons.forEach((button) => {
+						button.addEventListener("click", () => {
+							const selected = button.dataset.category;
+
+							buttons.forEach((b) => {
+								const isActive = b === button;
+								b.classList.toggle("is-active", isActive);
+								b.classList.remove(...activeClasses, ...inactiveClasses);
+								b.classList.add(...(isActive ? activeClasses : inactiveClasses));
+							});
+
+							cards.forEach((card) => {
+								const matches = selected === "all" || card.dataset.category === selected;
+								card.classList.toggle("hidden", !matches);
+							});
+						});
+					});
+				}
+
+				initInsightsFilter();
+				document.addEventListener("astro:page-load", initInsightsFilter);
+			</script>
+		)
+	}
 </Layout>
